@@ -172,3 +172,10 @@ _:-ms-input-placeholder, :root .demo-graph {
   box-sizing: border-box;
   align-items: center;
 }
+
+/* Gantt chart */
+
+.gantt_chart{
+  width: 100%;
+  margin-right: 20px;
+}
