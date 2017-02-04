@@ -8,6 +8,20 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/submit', function(req, res, next){
-   //TODO: Check validity
+   // Check validity
+    req.check('email', 'Invalid email address').isEmail();
+    req.check('password', 'Password is too short').isLength({min: 4});
+    req.check('confirm_password', 'Passwords do not match').equals(req.body.confirm_password);
+
+    var errors = req.validationErrors();
+    if (errors){
+        req.session.errors = errors;
+        res.redirect('/signup');
+    }
+    else {
+        res.redirect('/');
+    }
+
+
 });
 module.exports = router;

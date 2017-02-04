@@ -5,12 +5,29 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
-var expressSession =require('express-session');
+var session =require('express-session');
+var mysql = require('mysql');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
 var signup = require('./routes/signup');
+
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'orgnode'
+});
+
+connection.connect(function(error){
+    if(!!error){
+        console.log('Error');
+    }
+    else{
+        console.log('Connected');
+    }
+});
 
 var app = express();
 
@@ -26,11 +43,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(expressSession({
+app.use(session({
     secret: 'keyboard cat',
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true }
+    saveUninitialized: false
 }));
 
 app.use('/', index);

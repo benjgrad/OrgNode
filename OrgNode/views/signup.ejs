@@ -12,6 +12,7 @@
 
 </head>
 <body>
+<h1><%= failed_attempts %></h1>
 <form action="/signup/submit" method="post">
     <div class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <label class="mdl-textfield__label" for="email">E-Mail</label>
@@ -27,5 +28,10 @@
     </div>
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" type="submit">Sign Up</button>
 </form>
+<%if (errors) {%>
+    <% for (var i=0; i < errors.length; i++) {%>
+        <h1><%= errors[i].msg %></h1>
+    <%}%>
+<%}%>
 </body>
 </html>
