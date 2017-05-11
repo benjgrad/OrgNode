@@ -1,0 +1,24 @@
+[2017-04-05T22:10:04,222][INFO ][o.e.n.Node               ] [] initializing ...
+[2017-04-05T22:10:04,487][INFO ][o.e.e.NodeEnvironment    ] [ZHZuVOa] using [1] data paths, mounts [[Windows8_OS (C:)]], net usable_space [73.6gb], net total_space [116.4gb], spins? [unknown], types [NTFS]
+[2017-04-05T22:10:04,488][INFO ][o.e.e.NodeEnvironment    ] [ZHZuVOa] heap size [998.4mb], compressed ordinary object pointers [unknown]
+[2017-04-05T22:10:04,492][INFO ][o.e.n.Node               ] node name [ZHZuVOa] derived from node ID [ZHZuVOaHT9-E_pVgh3Yf5w]; set [node.name] to override
+[2017-04-05T22:10:04,493][INFO ][o.e.n.Node               ] version[5.3.0], pid[4372], build[3adb13b/2017-03-23T03:31:50.652Z], OS[Windows 10/10.0/x86], JVM[Oracle Corporation/Java HotSpot(TM) Client VM/1.8.0_121/25.121-b13]
+[2017-04-05T22:10:07,232][INFO ][o.e.p.PluginsService     ] [ZHZuVOa] loaded module [aggs-matrix-stats]
+[2017-04-05T22:10:07,233][INFO ][o.e.p.PluginsService     ] [ZHZuVOa] loaded module [ingest-common]
+[2017-04-05T22:10:07,233][INFO ][o.e.p.PluginsService     ] [ZHZuVOa] loaded module [lang-expression]
+[2017-04-05T22:10:07,233][INFO ][o.e.p.PluginsService     ] [ZHZuVOa] loaded module [lang-groovy]
+[2017-04-05T22:10:07,233][INFO ][o.e.p.PluginsService     ] [ZHZuVOa] loaded module [lang-mustache]
+[2017-04-05T22:10:07,233][INFO ][o.e.p.PluginsService     ] [ZHZuVOa] loaded module [lang-painless]
+[2017-04-05T22:10:07,233][INFO ][o.e.p.PluginsService     ] [ZHZuVOa] loaded module [percolator]
+[2017-04-05T22:10:07,234][INFO ][o.e.p.PluginsService     ] [ZHZuVOa] loaded module [reindex]
+[2017-04-05T22:10:07,234][INFO ][o.e.p.PluginsService     ] [ZHZuVOa] loaded module [transport-netty3]
+[2017-04-05T22:10:07,234][INFO ][o.e.p.PluginsService     ] [ZHZuVOa] loaded module [transport-netty4]
+[2017-04-05T22:10:07,235][INFO ][o.e.p.PluginsService     ] [ZHZuVOa] no plugins loaded
+[2017-04-05T22:10:11,067][INFO ][o.e.n.Node               ] initialized
+[2017-04-05T22:10:11,067][INFO ][o.e.n.Node               ] [ZHZuVOa] starting ...
+[2017-04-05T22:10:12,576][INFO ][o.e.t.TransportService   ] [ZHZuVOa] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2017-04-05T22:10:12,595][WARN ][o.e.b.BootstrapChecks    ] [ZHZuVOa] JVM is using the client VM [Java HotSpot(TM) Client VM] but should be using a server VM for the best performance
+[2017-04-05T22:10:15,741][INFO ][o.e.c.s.ClusterService   ] [ZHZuVOa] new_master {ZHZuVOa}{ZHZuVOaHT9-E_pVgh3Yf5w}{sbTh9IagRF-N3FN9ptyQfg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-elected-as-master ([0] nodes joined)
+[2017-04-05T22:10:15,838][INFO ][o.e.g.GatewayService     ] [ZHZuVOa] recovered [0] indices into cluster_state
+[2017-04-05T22:10:16,614][INFO ][o.e.h.n.Netty4HttpServerTransport] [ZHZuVOa] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2017-04-05T22:10:16,624][INFO ][o.e.n.Node               ] [ZHZuVOa] started

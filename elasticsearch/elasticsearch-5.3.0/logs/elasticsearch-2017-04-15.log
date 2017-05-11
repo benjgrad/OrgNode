@@ -1,0 +1,11 @@
+[2017-04-15T11:38:01,595][INFO ][o.e.c.m.MetaDataCreateIndexService] [ZHZuVOa] [customer] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-15T11:52:49,084][INFO ][o.e.c.m.MetaDataMappingService] [ZHZuVOa] [customer/2ugzWKHCSnyGtcbwooIZzQ] create_mapping [external]
+[2017-04-15T11:59:06,131][INFO ][o.e.c.m.MetaDataDeleteIndexService] [ZHZuVOa] [customer/2ugzWKHCSnyGtcbwooIZzQ] deleting index
+[2017-04-15T12:07:46,653][INFO ][o.e.c.m.MetaDataCreateIndexService] [ZHZuVOa] [customer] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-15T17:21:56,081][INFO ][o.e.c.m.MetaDataCreateIndexService] [ZHZuVOa] [task] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-15T17:24:36,849][INFO ][o.e.c.m.MetaDataDeleteIndexService] [ZHZuVOa] [customer/vEuj4fQDQtiM2Zj32WEeTA] deleting index
+[2017-04-15T22:51:46,457][INFO ][o.e.c.m.MetaDataDeleteIndexService] [ZHZuVOa] [task/RL62yR5vR6yf7uL0yVfU6g] deleting index
+[2017-04-15T23:08:34,788][INFO ][o.e.c.m.MetaDataCreateIndexService] [ZHZuVOa] [my_index] creating index, cause [api], templates [], shards [5]/[1], mappings [blogpost, user]
+[2017-04-15T23:09:15,547][INFO ][o.e.c.m.MetaDataDeleteIndexService] [ZHZuVOa] [my_index/4vLu0rQNQ6Kcrhyr6hg6sA] deleting index
+[2017-04-15T23:57:46,008][INFO ][o.e.c.m.MetaDataCreateIndexService] [ZHZuVOa] [task] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-15T23:59:16,560][INFO ][o.e.c.m.MetaDataMappingService] [ZHZuVOa] [task/Zjy-RIKdSBiQFLCCB86CVg] create_mapping [external]

@@ -1,0 +1,9 @@
+Create the index
+curl -XPUT 'localhost:9200/task?pretty'
+
+
+List all the indices
+curl -XGET 'localhost:9200/_cat/indices?v&pretty'
+
+Delete the index
+curl -XDELETE 'localhost:9200/task?pretty&pretty'

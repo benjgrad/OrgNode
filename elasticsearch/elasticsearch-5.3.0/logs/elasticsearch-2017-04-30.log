@@ -1,0 +1,6 @@
+[2017-04-30T00:00:20,520][INFO ][o.e.c.m.MetaDataCreateIndexService] [ZHZuVOa] [task] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-30T00:10:31,780][INFO ][o.e.c.m.MetaDataMappingService] [ZHZuVOa] [task/_RhVqLODSJisEsmHuLmhDA] create_mapping [constituencies]
+[2017-04-30T13:08:10,015][INFO ][o.e.c.m.MetaDataDeleteIndexService] [ZHZuVOa] [task/_RhVqLODSJisEsmHuLmhDA] deleting index
+[2017-04-30T13:10:39,521][INFO ][o.e.c.m.MetaDataCreateIndexService] [ZHZuVOa] [task] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-30T13:54:03,251][INFO ][o.e.c.m.MetaDataMappingService] [ZHZuVOa] [task/Xop-nWEASVGD9pYrQqITmA] create_mapping [task]
+[2017-04-30T16:02:50,066][INFO ][o.e.c.m.MetaDataMappingService] [ZHZuVOa] [task/Xop-nWEASVGD9pYrQqITmA] update_mapping [task]
