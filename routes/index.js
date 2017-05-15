@@ -1,25 +1,36 @@
 var express = require('express');
 var passport = require('passport');
 var Account = require('../models/account');
+var orgnodelogger = require('../models/logger');
+var path = require('path');
 var elasticsearch = require('../models/elasticsearch');
+var esclient =  require('../models/esconnection');
 var router = express.Router();
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var esdata = null;
+    var esdata = new Object();
+    var user;
     if (req.user!= undefined) {
-        console.log(req.user.username);
-        esdata = elasticsearch.findByUser(req.user.username);
-        res.render('index', {   title: 'OrgNode', user: req.user, tasklist: esdata});
+        user=req.user.username;
     }else {
-        var nuluser = null;
-        console.log("No user specified");
-        esdata = elasticsearch.findByUser(nuluser);
-        console.log("the data has been returned");
-        console.log(esdata);
-        res.render('index', {   title: 'OrgNode', user: req.user, tasklist: esdata});
+        user = "null";
     }
+    esclient.search(elasticsearch.findByUser(user)).then(function (body) {
+        var results = body.hits.hits;
+        for (i = 0; i < results.length; i++) {
+            esdata[i] = results[i]._source;
+        }
+        console.log(orgnodelogger.datefile(path.basename(__filename)) + "findByUser\tuser: " + user + "\tresponse:");
+        console.log(esdata);
+        console.log(esdata[1].Task_ID);
+        res.render('index', {   title: 'OrgNode', user: req.user, tasklist: esdata});
+    }, function (error) {
+        console.log("error: ");
+        console.log(error.message);
+        res.render('index', {   title: 'OrgNode', user: req.user, tasklist: esdata});
+    });
 });
 
 router.post('/addEvent', function(req, res, next) {

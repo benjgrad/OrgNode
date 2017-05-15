@@ -16,7 +16,6 @@
         function drawChart() {
 
             var data = new google.visualization.DataTable();
-
             data.addColumn('string', 'Task ID');
             data.addColumn('string', 'Task Name');
             data.addColumn('date', 'Start Date');
@@ -25,21 +24,16 @@
             data.addColumn('number', 'Percent Complete');
             data.addColumn('string', 'Dependencies');
             data.addRows([
-                ['Research', 'Get sources',
-                      new Date(2015, 0, 1), new Date(2015, 0, 5), null,  100,  null],
-                ['Write', 'Write paper',
-                    null, new Date(2015, 0, 9), daysToMilliseconds(3), 25, 'Research,Outline'],
-                ['Cite', 'Create bibliography',
-                    null, new Date(2015, 0, 7), daysToMilliseconds(1), 20, 'Research'],
-                ['Complete', 'Hand in paper',
-                    null, new Date(2015, 0, 10), daysToMilliseconds(1), 0, 'Cite,Write'],
-                ['Outline', 'Outline paper',
-                    null, new Date(2015, 0, 6), daysToMilliseconds(1), 100, 'Research']
+                <% for (var key in tasklist) {%>
+                ['<%= tasklist[key].Task_ID %>', '<%= tasklist[key].Task_Name %>',
+                 new Date(<%= tasklist[key].Start_Date.substr(0,4) %>, <%= tasklist[key].Start_Date.substr(5,2) %>, <%= tasklist[key].Start_Date.substr(8,2) %>),
+                 new Date(<%= tasklist[key].End_Date.substr(0,4) %>, <%= tasklist[key].End_Date.substr(5,2) %>, <%= tasklist[key].End_Date.substr(8,2) %>),
+                 daysToMilliseconds(<%= tasklist[key].Duration %>), <%= tasklist[key].Percent_Complete %> ,  null],
+                <%}%>
             ]);
             var options = {
                 height: 275
             };
-
             var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
 
             chart.draw(data, options);

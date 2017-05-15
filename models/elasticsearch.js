@@ -4,7 +4,7 @@ var orgnodelogger = require('../models/logger');
 var path = require('path');
 const uuidV1 = require('uuid/v1');
 
-
+var hits = null;
 
 module.exports = {
     // Index the task
@@ -34,35 +34,20 @@ module.exports = {
         });
     },
     findByUser: function(user){
-        console.log("" + orgnodelogger.datefile(path.basename(__filename)) + "findByUser\tuser: " + user);
-        var hits = null;
-        var resultsObj = new Object();
-        esclient.search({
+    return {
             index: 'task',
             body: {
                 query : {
                     bool : {
                         should: [
                             { term : { ispublic : "true" } },
-                            { term : { admin : "admin" } }
+                            { term : { admin : user.username } }
                         ],
                         minimum_should_match : 1,
                         boost : 1.0
                     }
                 }
             }
-        }, function (error, response) {
-            if (error){
-                console.log(error.message);
-            }
-            else {
-                var results = response.hits.hits;
-                for (i = 0; i < results.length; i++) {
-                    resultsObj[i] = results[i]._source;
-                }
-                console.log(orgnodelogger.datefile(path.basename(__filename)) + "findByUser\tuser: " + user + "\tresponse:");
-                console.log(resultsObj);
-            }
-        });
+        }
     }
 };
